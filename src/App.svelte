@@ -1,10 +1,19 @@
 <script lang="ts">
+    import { working } from "@/stores/writeWorkingLocal";
+    import Load from "@/components/Load.svelte";
+    import Edit from "@/components/Edit.svelte";
 </script>
 
 <main class="container p-6">
-  <h1 class="title">Full Thrust Game Builder</h1>
-  <!-- svelte-ignore missing-declaration -->
-  <p class="version subtitle">Version: {__APP_VERSION__}</p>
+    <h1 class="title">Full Thrust Game Builder</h1>
+    <!-- svelte-ignore missing-declaration -->
+    <p class="version subtitle">Version: {__APP_VERSION__}</p>
+
+    {#if $working === undefined}
+        <Load />
+    {:else}
+        <Edit />
+    {/if}
 </main>
 
 <footer class="footer">
