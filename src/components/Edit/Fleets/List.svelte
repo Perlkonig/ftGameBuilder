@@ -55,6 +55,7 @@
     };
 
     let modalSSD: string;
+    let modalDelete: string;
 </script>
 
 <Summary />
@@ -92,7 +93,7 @@
     </table>
     <div class="field">
         <div class="control">
-            <button class="button is-responsive" on:click={() => deleteShip(JSON.parse(clickedRow.idxs))}>
+            <button class="button is-responsive" on:click={() => modalDelete = "is-active"}>
                 <span class="icon" title="Delete ship">
                     <i class="fa-solid fa-trash"></i>
                 </span>
@@ -136,6 +137,29 @@
         </section>
         <footer class="modal-card-foot">
             <button class="button" on:click="{() => {modalSSD = ""}}">Close</button>
+        </footer>
+    </div>
+</div>
+
+<div class="modal {modalDelete}" id="showDelete">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Confirm Deletion</p>
+        </header>
+        <section class="modal-card-body">
+            <div class="content">
+                <p>You're about to delete the following ship. This cannot be undone. Please confirm.</p>
+            </div>
+            <div style="height: 75%">
+            {#key renderedUri}
+                <object id="svg-object" data="{renderedUri}" type="image/svg+xml"></object>
+            {/key}
+            </div>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-danger" on:click="{() => {deleteShip(JSON.parse(clickedRow.idxs)); modalDelete = undefined;}}">Delete Ship</button>
+            <button class="button" on:click="{() => modalDelete = undefined}">Close</button>
         </footer>
     </div>
 </div>

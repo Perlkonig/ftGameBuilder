@@ -4,6 +4,7 @@
     import Header from "./Edit/Header.svelte";
     import Fleets from "./Edit/Fleets.svelte";
     import Map from "./Edit/Map.svelte";
+    import Turns from "./Edit/Turns.svelte";
 
     let activeTab: string;
     onMount(() => {
@@ -35,7 +36,7 @@
 {:else if activeTab === "fleets"}
     <Fleets />
 {:else if activeTab === "turns"}
-    <p>Turns</p>
+    <Turns />
 {/if}
 
 <style></style>
