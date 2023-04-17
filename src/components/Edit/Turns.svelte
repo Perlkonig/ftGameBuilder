@@ -8,6 +8,9 @@
     };
     let turn: number;
     onMount(() => {
+        if ( (! $working.game.hasOwnProperty("turns")) || ($working.game.turns === undefined) || (! Array.isArray($working.game.turns)) ) {
+            $working.game.turns = [];
+        }
         if ($working.game.turns.length === 0) {
             turn = 0;
         } else {

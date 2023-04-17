@@ -3,7 +3,8 @@
     import { working } from "@/stores/writeWorkingLocal";
     import { renderUri } from "ftlibship";
     import { PowerTable } from "@muonw/powertable";
-    import type {Data} from "@muonw/powertable/package/components/PowerTable.svelte";
+    import type {Data} from "@muonw/powertable/components/PowerTable.svelte";
+    import '@muonw/powertable/styles/power-table.scss';
     import { nanoid } from "nanoid";
     import Summary from "./Summary.svelte";
 
@@ -165,8 +166,6 @@
 </div>
 
 <style global>
-    @import "@/../node_modules/@muonw/powertable/package/dist/power-table.css";
-
     #svg-object {
         height: 100%;
         width: 100%;

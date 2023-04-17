@@ -20,10 +20,13 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
+    "@muonw/powertable": "^2.1.0",
     "@sveltejs/vite-plugin-svelte": "^2.0.4",
     "@tsconfig/svelte": "^4.0.1",
+    "sass": "^1.62.0",
     "svelte": "^3.58.0",
     "svelte-check": "^3.2.0",
+    "svelte-markdown": "^0.2.3",
     "svelte-preprocess": "^5.0.3",
     "ts-node": "^10.9.1",
     "tslib": "^2.5.0",
@@ -31,11 +34,9 @@
     "vite": "^4.2.1"
   },
   "dependencies": {
-    "@muonw/powertable": "github:muonw/powertable",
     "dayjs": "^1.11.7",
     "ftlibgame": "../ftLibGame/ftlibgame-1.0.0.tgz",
-    "ftlibship": "github:perlkonig/ftLibShip#main",
-    "nanoid": "^4.0.2",
-    "svelte-markdown": "^0.2.3"
+    "ftlibship": "github:perlkonig/ftLibShip#v2.0.3",
+    "nanoid": "^4.0.2"
   }
 }
