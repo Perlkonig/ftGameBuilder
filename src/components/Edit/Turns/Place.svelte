@@ -1,5 +1,6 @@
 <script lang="ts">
     import { working } from "@/stores/writeWorkingLocal";
+    import Ship from "./Place/Ship.svelte";
 
     export let turn: number;
 
@@ -12,6 +13,7 @@
 
     let objSelect: string;
 </script>
+
 <div class="field">
     <label for="objSelect">Select object type</label>
     <div class="control">
@@ -30,3 +32,6 @@
 {/if}
 </div> <!-- field -->
 
+{#if objSelect === "ship"}
+    <Ship />
+{/if}
